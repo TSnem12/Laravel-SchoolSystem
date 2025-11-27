@@ -24,7 +24,10 @@ class ProfileController extends Controller
 
     public function ProfileStore(Request $request){
 
-    	$data = User::find(Auth::user()->id);
+		/** @var \App\Models\User $data */
+
+    	$data = Auth::user();
+
     	$data->name = $request->name;
     	$data->email = $request->email;
     	$data->mobile = $request->mobile;
@@ -36,7 +39,7 @@ class ProfileController extends Controller
     		@unlink(public_path('upload/user_images/'.$data->image));
     		$filename = date('YmdHi').$file->getClientOriginalName();
     		$file->move(public_path('upload/user_images'),$filename);
-    		$data['image'] = $filename;
+    		$data->image = $filename;
     	}
     	$data->save();
 
@@ -58,7 +61,7 @@ class ProfileController extends Controller
 
 
  	public function PasswordUpdate(Request $request){
- 		$validatedData = $request->validate([
+ 		$request->validate([
     		'oldpassword' => 'required',
     		'password' => 'required|confirmed',
     	]);
@@ -66,7 +69,8 @@ class ProfileController extends Controller
 
     	$hashedPassword = Auth::user()->password;
     	if (Hash::check($request->oldpassword,$hashedPassword)) {
-    		$user = User::find(Auth::id());
+    		/** @var \App\Models\User */
+			$user = Auth::user();
     		$user->password = Hash::make($request->password);
     		$user->save();
     		Auth::logout();
