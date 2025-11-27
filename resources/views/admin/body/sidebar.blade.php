@@ -69,7 +69,7 @@
             <li class="{{ ($route == 'student.class.view' ? 'active' : '') }}"><a href="{{ route('student.class.view') }}"><i class="ti-more"></i>Student Class</a></li>
             <li class="{{ ($route == 'student.year.view' ? 'active' : '') }}"><a href="{{ route('student.year.view') }}"><i class="ti-more"></i>Student Year</a></li>
             <li class="{{ ($route == 'student.group.view' ? 'active' : '') }}"><a href="{{ route('student.group.view') }}"><i class="ti-more"></i>Student Group</a></li>
-            
+            <li class="{{ ($route == 'student.shift.view' ? 'active' : '') }}"><a href="{{ route('student.shift.view') }}"><i class="ti-more"></i>Student Shift</a></li>
             
 
 

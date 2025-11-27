@@ -71,8 +71,8 @@ class StudentGroupController extends Controller
 
 
     public function StudentGroupDelete($id){
-        $user = StudentGroup::find($id);
-        $user->delete();
+        
+        StudentGroup::find($id)->delete();
 
         $notification = array(
             'message' => 'Student Group Deleted Successfully',
