@@ -74,7 +74,7 @@
             <li class="{{ ($route == 'fee.amount.view' ? 'active' : '') }}"><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Fee Category Amount</a></li>
             <li class="{{ ($route == 'exam.type.view' ? 'active' : '') }}"><a href="{{ route('exam.type.view') }}"><i class="ti-more"></i>Exam Type</a></li>
             <li class="{{ ($route == 'school.subject.view' ? 'active' : '') }}"><a href="{{ route('school.subject.view') }}"><i class="ti-more"></i>School Subject</a></li>
-
+            <li class="{{ ($route == 'assign.subject.view' ? 'active' : '') }}"><a href="{{ route('assign.subject.view') }}"><i class="ti-more"></i>Assign Subject</a></li>
             
           </ul>
         </li>
