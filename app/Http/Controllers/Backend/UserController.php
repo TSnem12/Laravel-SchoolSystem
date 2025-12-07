@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function UserStore(Request $request){
 
-    	$validatedData = $request->validate([
+    	$request->validate([
     		'email' => 'required|unique:users',
     		'name' => 'required',
     	]);
