@@ -13,6 +13,7 @@ use App\Models\StudentClass;
 use App\Models\StudentGroup;
 use App\Models\StudentShift;
 
+use niklasravnsborg\LaravelPdf\Facades\Pdf;
 use Illuminate\Support\Facades\DB;
 
 class StudentRegController extends Controller
@@ -262,7 +263,15 @@ class StudentRegController extends Controller
 
     } // End Method 
 
-  
+    
+    public function StudentRegDetails($student_id){
+        $data['details'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first();
+
+        $pdf = PDF::loadView('backend.student.student_reg.student_details_pdf', $data);
+        $pdf->SetProtection(['copy', 'print'], '', 'pass');
+        return $pdf->stream('document.pdf');
+
+    }
 
 
 }
