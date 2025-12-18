@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
+use App\Http\Controllers\Backend\Employee\EmployeeRegController;
 
 
 /*
@@ -192,4 +193,17 @@ Route::group(['middleware' => 'auth'], function() {
 
     });
 
-});
+    
+    Route::prefix('employees')->group(function(){
+
+        /// Employee Registration Routes
+        Route::get('reg/employee/view', [EmployeeRegController::class, 'EmployeeView'])->name('employee.registration.view');
+        Route::get('reg/employee/add', [EmployeeRegController::class, 'EmployeeAdd'])->name('employee.registration.add');
+        Route::post('reg/employee/store', [EmployeeRegController::class, 'EmployeeStore'])->name('store.employee.registration');
+        Route::get('reg/employee/edit/{id}', [EmployeeRegController::class, 'EmployeeEdit'])->name('employee.registration.edit');
+        Route::post('reg/employee/update/{id}', [EmployeeRegController::class, 'EmployeeUpdate'])->name('update.employee.registration');
+        Route::get('reg/employee/details/{id}', [EmployeeRegController::class, 'EmployeeDetails'])->name('employee.registration.details');
+
+    });     
+
+}); // End Middleare Auth Route 
