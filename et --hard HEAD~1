@@ -1,0 +1,20 @@
+[33m99ef52a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mstudent[m[33m, [m[1;31morigin/student[m[33m, [m[1;32memployee[m[33m)[m manage employee-registraion
+[33m39fe6ff[m students exam fee
+[33mcacb738[m students monthly fee
+[33m3925ddd[m students registration fee
+[33m2ccf706[m student roll-generate
+[33m0fa77e3[m generate student-PDF
+[33m22e9ba8[m student-registration management
+[33m99d27a3[m manage designation
+[33ma65dcf1[m student-assign-subject management
+[33mc9d05d8[m manage student subjects
+[33m4b0cb1d[m manage student exam-type
+[33mb85d3d6[m manage student fee-category-amount
+[33mbfb0328[m student fee category
+[33macf65ae[m student shift management
+[33m2d29a4a[m student group management
+[33mb1bc8ff[m student year management
+[33m8e1a8d1[m student class management
+[33m6559db8[m[33m ([m[1;31morigin/user[m[33m, [m[1;32muser[m[33m)[m CRUD for user-profile page
+[33m57797f2[m CRUD for users
+[33mcb9c05b[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m first commit
