@@ -113,6 +113,7 @@
             <li  class="{{ ($route == 'employee.registration.view') ? 'active' : '' }}"><a href="{{ route('employee.registration.view') }}"><i class="ti-more"></i>Employee Registration</a></li>
             <li  class="{{ ($route == 'employee.salary.view') ? 'active' : '' }}"><a href="{{ route('employee.salary.view') }}"><i class="ti-more"></i>Employee Salary</a></li>
             <li class="{{ ($route == 'employee.leave.view') ? 'active' : '' }}"><a href="{{ route('employee.leave.view') }}"><i class="ti-more"></i>Employee Leave</a></li>
+            <li class="{{ ($route == 'employee.attendance.view') ? 'active' : '' }}"><a href="{{ route('employee.attendance.view') }}"><i class="ti-more"></i>Employee Attendance</a></li>
 
 
 
