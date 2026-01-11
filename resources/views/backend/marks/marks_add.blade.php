@@ -200,7 +200,7 @@
         });
         html = $('#marks-entry-tr').html(html);
       }
-    });
+    }); 
   });
 
 </script>

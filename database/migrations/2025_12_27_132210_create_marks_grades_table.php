@@ -22,7 +22,7 @@ class CreateMarksGradesTable extends Migration
             $table->string('start_point');
             $table->string('end_point');
             $table->string('remarks');  
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

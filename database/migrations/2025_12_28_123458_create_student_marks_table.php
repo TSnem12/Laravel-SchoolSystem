@@ -22,7 +22,7 @@ class CreateStudentMarksTable extends Migration
             $table->integer('assign_subject_id')->nullable();
             $table->integer('exam_type_id')->nullable();
             $table->double('marks')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

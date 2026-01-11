@@ -27,6 +27,10 @@ use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 
+use App\Http\Controllers\Backend\Marks\MarksController;
+
+
+use App\Http\Controllers\Backend\DefaultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -235,10 +239,21 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('monthly/salary/view', [MonthlySalaryController::class, 'MonthlySalaryView'])->name('employee.monthly.salary');
         Route::get('monthly/salary/get', [MonthlySalaryController::class, 'MonthlySalaryGet'])->name('employee.monthly.salary.get');
         Route::get('monthly/salary/payslip/{employee_id}', [MonthlySalaryController::class, 'MonthlySalaryPayslip'])->name('employee.monthly.salary.payslip');
+    });   
+    
+    
+    /// Marks Management Routes  
+    Route::prefix('marks')->group(function(){
 
+        Route::get('marks/entry/add', [MarksController::class, 'MarksAdd'])->name('marks.entry.add');
+        Route::post('marks/entry/store', [MarksController::class, 'MarksStore'])->name('marks.entry.store'); 
+        Route::get('marks/entry/edit', [MarksController::class, 'MarksEdit'])->name('marks.entry.edit'); 
+        Route::get('marks/getstudents/edit', [MarksController::class, 'MarksEditGetStudents'])->name('student.edit.getstudents');
+        Route::post('marks/entry/update', [MarksController::class, 'MarksUpdate'])->name('marks.entry.update');  
 
-
-
-    });     
+    }); 
+ 
+    Route::get('marks/getsubject', [DefaultController::class, 'GetSubject'])->name('marks.getsubject');
+    Route::get('student/marks/getstudents', [DefaultController::class, 'GetStudents'])->name('student.marks.getstudents');    
 
 }); // End Middleare Auth Route 

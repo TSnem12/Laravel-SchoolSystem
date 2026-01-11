@@ -8,4 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class MarksGrade extends Model
 {
     use HasFactory;
-}
+} 
