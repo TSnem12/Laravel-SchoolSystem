@@ -151,29 +151,24 @@
         </li>
 
 
-        <li class="header nav-small-cap">User Interface</li>
-        <li class="treeview">
+      <li class="header nav-small-cap">Report Interface</li>
+       <li class="treeview {{ ($prefix == '/reports') ? 'active' : '' }}">
           <a href="#">
-            <i data-feather="grid"></i>
-            <span>Components</span>
+            <i data-feather="server"></i></i> <span> Reports Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
-            <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
+            <li class="{{ ($route == 'monthly.profit.view') ? 'active' : '' }}"><a href="{{ route('monthly.profit.view') }}"><i class="ti-more"></i>Monthly-Yearly Profite</a></li> 
+
+          
+          
+            
           </ul>
         </li>
-         
-		  
-		    <li>
-          <a href="auth_login.html">
-            <i data-feather="lock"></i>
-			      <span>Log Out</span>
-          </a>
-        </li> 
-        
+		
+		 
       </ul>
     </section>
 	
