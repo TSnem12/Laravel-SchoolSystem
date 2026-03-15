@@ -47,4 +47,39 @@ class ResultReportController extends Controller
     } // end Method 
 
 
+	public function IdcardView(){
+    	$data['years'] = StudentYear::all();
+    	$data['classes'] = StudentClass::all();
+    	return view('backend.report.idcard.idcard_view',$data);
+    }
+
+
+    public function IdcardGet(Request $request){
+    	$year_id = $request->year_id;
+    	$class_id = $request->class_id;
+
+    	$check_data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->first();
+
+		if ($check_data) {
+			$data['allData'] = $check_data->get();
+			
+			$pdf = PDF::loadView('backend.report.idcard.idcard_pdf', $data);
+			$pdf->SetProtection(['copy', 'print'], '', 'pass');
+			return $pdf->stream('document.pdf');
+
+    	}else{
+
+			$notification = array(
+				'message' => 'Sorry These Criteria Does not match',
+				'alert-type' => 'error'
+			);
+
+    	return redirect()->back()->with($notification);
+
+    }
+
+
+    }// end method 
+
+
 }
