@@ -42,7 +42,7 @@ class MarkSheetController extends Controller
         } else {
 
             $notification = array(
-                'message' => 'Sorry, These Criteria Dose not match',
+                'message' => 'Sorry, These Criteria Does not match',
                 'alert-type' => 'error'
             );
 

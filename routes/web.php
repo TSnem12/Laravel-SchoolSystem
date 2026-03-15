@@ -38,6 +38,7 @@ use App\Http\Controllers\Backend\Account\OtherCostController;
 
 use App\Http\Controllers\Backend\Report\ProfitController;
 use App\Http\Controllers\Backend\Report\MarkSheetController;
+use App\Http\Controllers\Backend\Report\ResultReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -304,6 +305,12 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('marksheet/generate/view', [MarkSheetController::class, 'MarkSheetView'])->name('marksheet.generate.view');
         Route::get('marksheet/generate/get', [MarkSheetController::class, 'MarkSheetGet'])->name('report.marksheet.get');
             
+        // Student Result Report Routes 
+        Route::get('student/result/view', [ResultReportController::class, 'ResultView'])->name('student.result.view');
+        Route::get('student/result/get', [ResultReportController::class, 'ResultGet'])->name('report.student.result.get');
+
+
+
 
     }); 
 
